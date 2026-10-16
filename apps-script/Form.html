@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base target="_top"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--navy:#102b50;--blue:#1e4c7a;--gold:#d5ad58;--ink:#172438;--muted:#64748b;--line:#dce3ed;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.5}.wrap{max-width:850px;margin:0 auto;padding:22px 15px 50px}.head{background:var(--navy);color:#fff;padding:25px;border-radius:16px 16px 0 0}.brand{letter-spacing:.16em;font-weight:800;color:#f0d18a}.head h1{margin:8px 0 4px;font-size:clamp(1.5rem,5vw,2.2rem)}.head p{margin:0;color:#e1eaf5}.formbox{background:#fff;padding:clamp(18px,4vw,34px);border-radius:0 0 16px 16px;box-shadow:0 12px 32px #102b5010}.section-title{margin:25px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:1.05rem;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.wide{grid-column:1/-1}label,.field-label{font-size:.92rem;font-weight:700}input,select,textarea{font:inherit;width:100%;padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:var(--ink)}textarea{min-height:95px;resize:vertical}input:focus,select:focus,textarea:focus{outline:2px solid #9fc2e5;border-color:var(--blue)}.choices{display:flex;flex-wrap:wrap;gap:10px 16px}.choices label{display:flex;gap:7px;align-items:center;font-weight:500}.choices input{width:auto}.hint{font-size:.82rem;color:var(--muted)}.consent{display:flex;gap:10px;align-items:flex-start;margin:22px 0}.consent input{width:auto;margin-top:5px}.btn{border:0;border-radius:10px;background:var(--gold);color:#172438;font-size:1rem;font-weight:800;padding:13px 19px;cursor:pointer}.btn:disabled{opacity:.55;cursor:wait}.status{margin:16px 0;padding:12px 14px;border-radius:9px;display:none;white-space:pre-wrap}.status.error{display:block;background:#fff0f0;color:#9b1c1c}.status.success{display:block;background:#e9f8ef;color:#166534}.trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+#cardSection{display:none;margin:24px 0 0}.card-help{background:#fff;border:1px solid var(--line);padding:14px;border-radius:10px;margin-bottom:15px}.card{width:576px;height:816px;max-width:100%;margin:0 auto;background:#fff;border:2px solid var(--navy);position:relative;overflow:hidden;text-align:center;padding:34px 34px 28px;display:flex;flex-direction:column;align-items:center;color:var(--ink)}.card:before{content:"";position:absolute;inset:0 0 auto;height:18px;background:var(--gold)}.card-logo{margin-top:14px;font-weight:900;letter-spacing:.22em;color:var(--navy);font-size:28px}.card-sub{font-size:12px;letter-spacing:.16em;color:var(--blue);font-weight:700}.card-rule{width:75%;height:2px;background:var(--gold);margin:23px 0}.photo{width:210px;height:250px;object-fit:cover;border:4px solid var(--navy);border-radius:8px;background:#f1f5f9}.card h2{font-size:27px;line-height:1.2;margin:25px 0 8px;overflow-wrap:anywhere}.card-label{font-size:12px;letter-spacing:.18em;color:var(--muted);font-weight:800}.member-number{font-size:18px;font-weight:800;color:var(--blue);margin-top:18px}.phone{font-size:18px;margin-top:10px}.provisional{margin-top:auto;border:1px solid var(--gold);color:#7a5a17;padding:8px 15px;font-size:11px;letter-spacing:.12em;font-weight:800}.card-footer{font-size:10px;color:var(--muted);margin-top:14px}.print-btn{display:block;margin:15px auto}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.wrap{padding:12px 10px 35px}.head{padding:20px}.card{height:auto;min-height:816px;padding:28px 20px 22px}.photo{width:175px;height:210px}.card h2{font-size:23px}}
+@page{size:6in 8.5in;margin:0}
+@media print{body{background:#fff!important;margin:0!important;padding:0!important}.wrap,.head,.formbox>*:not(#cardSection){display:none!important}#cardSection{display:block!important;margin:0!important;padding:0!important}.card-help,.print-btn{display:none!important}.card{width:6in!important;height:8.5in!important;max-width:none!important;margin:0!important;border:2px solid #102b50!important;page-break-inside:avoid;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body><div class="wrap">
+<header class="head"><div class="brand">LICM</div><h1>Membership Registration</h1><p>Please complete every required field. Your information is sent to LICM's private registration records.</p></header>
+<main class="formbox">
+<form id="membershipForm">
+<div class="trap" aria-hidden="true"><label>Leave this field empty<input name="website" id="website" autocomplete="off" tabindex="-1"></label></div>
+<h2 class="section-title">Personal details</h2>
+<div class="grid">
+<div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" maxlength="120" autocomplete="name" required></div>
+<div class="field"><label for="dob">Date of birth *</label><input id="dob" name="dob" type="date" required></div>
+<div class="field"><label for="mobile">Mobile number *</label><input id="mobile" name="mobile" type="tel" maxlength="30" autocomplete="tel" placeholder="+91..." required></div>
+<div class="field"><label for="qualification">Educational qualification *</label><select id="qualification" name="qualification" required><option value="">Choose qualification</option><option>Below 10th</option><option>10th pass</option><option>12th pass</option><option>Diploma / ITI</option><option>Graduate</option><option>Postgraduate</option><option>Doctorate</option><option>Other</option></select></div>
+<div class="field wide"><label for="address">Full address *</label><textarea id="address" name="address" maxlength="600" autocomplete="street-address" required></textarea></div>
+</div>
+<h2 class="section-title">Church and ministry details</h2>
+<div class="grid">
+<div class="field"><label for="church">Member of which church? *</label><input id="church" name="church" maxlength="180" placeholder="Church name and location" required></div>
+<div class="field"><span class="field-label">Water baptism? *</span><div class="choices"><label><input type="radio" name="baptized" value="Yes" required> Yes</label><label><input type="radio" name="baptized" value="No" required> No</label></div></div>
+<div class="field wide"><span class="field-label">Fields of interest * (select at least one)</span><div class="choices" id="interests">
+<label><input type="checkbox" value="Prayer"> Prayer</label><label><input type="checkbox" value="Evangelism"> Evangelism</label><label><input type="checkbox" value="Teaching"> Teaching</label><label><input type="checkbox" value="Youth ministry"> Youth ministry</label><label><input type="checkbox" value="Worship"> Worship</label><label><input type="checkbox" value="Community service"> Community service</label><label><input type="checkbox" value="Administration"> Administration</label><label><input type="checkbox" value="Other"> Other</label>
+</div></div>
+<div class="field wide"><label for="photo">Face photo * (JPG or PNG, maximum 2 MB)</label><input id="photo" name="photo" type="file" accept="image/jpeg,image/png" required><span class="hint">Use a clear, front-facing photo. Your photo will be saved to a private Google Drive folder and will not be made public by this form.</span></div>
+</div>
+<label class="consent"><input id="consent" type="checkbox" required><span>I confirm that these details are accurate and consent to LICM storing the information and photo for membership administration and card preparation. Authorized LICM administrators may access these records.</span></label>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+<button class="btn" id="submitBtn" type="submit">Submit membership application</button>
+</form>
+<section id="cardSection">
+<div class="card-help"><strong>Application received.</strong><br>Your provisional card is ready. Use the print button and select actual size / 100%. Choose custom paper size 6 × 8.5 inches if available.</div>
+<div class="card" id="memberCard"><div class="card-logo">LICM</div><div class="card-sub">MEMBERSHIP CARD</div><div class="card-rule"></div><img class="photo" id="cardPhoto" alt="Member photo"><div class="card-label" style="margin-top:24px">MEMBER NAME</div><h2 id="cardName"></h2><div class="member-number" id="cardId"></div><div class="phone" id="cardPhone"></div><div class="provisional">PROVISIONAL · PENDING LICM VERIFICATION</div><div class="card-footer">This card is provisional until the membership application is verified by LICM.</div></div>
+<button class="btn print-btn" type="button" onclick="window.print()">Print / Save card as PDF</button>
+</section>
+</main></div>
+<script>
+const form = document.getElementById('membershipForm');
+const statusBox = document.getElementById('status');
+const submitBtn = document.getElementById('submitBtn');
+const photoInput = document.getElementById('photo');
+const MAX_BYTES = 2 * 1024 * 1024;
+function setStatus(message, kind) { statusBox.textContent = message; statusBox.className = 'status ' + kind; }
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(new Error('Could not read the selected photo.'));
+    reader.readAsDataURL(file);
+  });
+}
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  statusBox.className = 'status';
+  const photo = photoInput.files && photoInput.files[0];
+  if (!photo) return setStatus('Please choose a face photo.', 'error');
+  if (!['image/jpeg','image/png'].includes(photo.type)) return setStatus('Please use a JPG or PNG photo.', 'error');
+  if (photo.size > MAX_BYTES) return setStatus('The photo must be 2 MB or smaller.', 'error');
+  const interests = Array.from(document.querySelectorAll('#interests input:checked')).map(el => el.value);
+  if (!interests.length) return setStatus('Please select at least one field of interest.', 'error');
+  const baptizedEl = document.querySelector('input[name="baptized"]:checked');
+  if (!baptizedEl) return setStatus('Please answer the water-baptism question.', 'error');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting securely…';
+  try {
+    const photoDataUrl = await readFileAsDataUrl(photo);
+    const payload = {
+      website: document.getElementById('website').value,
+      fullName: document.getElementById('fullName').value.trim(),
+      dob: document.getElementById('dob').value,
+      mobile: document.getElementById('mobile').value.trim(),
+      qualification: document.getElementById('qualification').value,
+      address: document.getElementById('address').value.trim(),
+      church: document.getElementById('church').value.trim(),
+      baptized: baptizedEl.value, interests: interests,
+      photoDataUrl: photoDataUrl, photoName: photo.name,
+      consent: document.getElementById('consent').checked
+    };
+    google.script.run.withSuccessHandler((result) => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit membership application';
+      if (!result || !result.ok) return setStatus('The server did not confirm the submission. Please try again.', 'error');
+      setStatus('Success! Your application reference is ' + result.memberId + '. Keep this reference for your records.', 'success');
+      document.getElementById('cardPhoto').src = photoDataUrl;
+      document.getElementById('cardName').textContent = payload.fullName;
+      document.getElementById('cardId').textContent = result.memberId;
+      document.getElementById('cardPhone').textContent = payload.mobile;
+      document.getElementById('cardSection').style.display = 'block';
+      document.getElementById('cardSection').scrollIntoView({behavior:'smooth', block:'start'});
+      form.reset();
+      photoInput.required = false;
+    }).withFailureHandler((error) => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit membership application';
+      setStatus((error && error.message) ? error.message : 'Submission failed. Please check your connection and try again.', 'error');
+    }).submitMembership(payload);
+  } catch (error) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit membership application';
+    setStatus(error.message || 'Could not prepare the photo. Please try again.', 'error');
+  }
+});
+</script></body></html>
