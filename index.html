@@ -1,9 +1,60 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="LICM membership registration"><title>LICM | Membership</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="LICM membership registration">
+<title>LICM | Membership</title>
 <style>
-:root{--navy:#102b50;--blue:#1e4c7a;--gold:#d5ad58;--ink:#172438;--muted:#64748b;--paper:#f5f7fb}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}header{background:var(--navy);color:#fff;padding:22px max(22px,calc((100vw - 1080px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;letter-spacing:.14em;font-size:1.15rem}.brand small{display:block;font-size:.72rem;letter-spacing:.08em;color:#dce6f2;font-weight:500}main{max-width:1080px;margin:0 auto;padding:56px 22px 64px}.hero{background:linear-gradient(125deg,#102b50,#1e4c7a);color:#fff;border-radius:24px;padding:clamp(28px,6vw,66px)}.eyebrow{color:#f0d18a;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:800}.hero h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.1;max-width:700px;margin:14px 0}.hero p{max-width:650px;color:#e1eaf5;font-size:1.08rem}.button{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#172438;text-decoration:none;font-weight:800;border-radius:10px;padding:14px 22px;margin-top:16px}.note{font-size:.88rem;color:#d9e4f1;margin-top:12px}.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}.feature{background:#fff;border:1px solid #e4e9f1;border-radius:16px;padding:22px}.num{color:var(--blue);font-size:.8rem;font-weight:800;letter-spacing:.12em}.feature h2{font-size:1.1rem;margin:8px 0}.feature p{color:var(--muted);font-size:.95rem;margin:0}footer{text-align:center;padding:24px;color:var(--muted);font-size:.85rem}@media(max-width:720px){header{align-items:flex-start;flex-direction:column}.features{grid-template-columns:1fr}main{padding-top:28px}}
-</style></head><body>
+:root{--navy:#102b50;--blue:#1e4c7a;--gold:#d5ad58;--ink:#172438;--muted:#64748b;--paper:#f5f7fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+header{background:var(--navy);color:#fff;padding:22px max(22px,calc((100vw - 1080px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:800;letter-spacing:.14em;font-size:1.15rem}
+.brand small{display:block;font-size:.72rem;letter-spacing:.08em;color:#dce6f2;font-weight:500}
+main{max-width:1080px;margin:0 auto;padding:42px 22px 64px}
+.hero{background:linear-gradient(125deg,#102b50,#1e4c7a);color:#fff;border-radius:24px;padding:clamp(28px,6vw,58px)}
+.eyebrow{color:#f0d18a;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:800}
+.hero h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.1;max-width:700px;margin:14px 0}
+.hero p{max-width:650px;color:#e1eaf5;font-size:1.08rem}
+.button{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#172438;text-decoration:none;font-weight:800;border-radius:10px;padding:14px 22px;margin-top:16px}
+.note{font-size:.88rem;color:#d9e4f1;margin-top:12px}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.feature{background:#fff;border:1px solid #e4e9f1;border-radius:16px;padding:22px}
+.num{color:var(--blue);font-size:.8rem;font-weight:800;letter-spacing:.12em}
+.feature h2{font-size:1.1rem;margin:8px 0}
+.feature p{color:var(--muted);font-size:.95rem;margin:0}
+.registration{margin-top:36px;background:#fff;border:1px solid #e4e9f1;border-radius:20px;overflow:hidden}
+.registration-head{padding:24px 26px;background:#fff}
+.registration-head .eyebrow{color:var(--blue)}
+.registration-head h2{margin:6px 0;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy)}
+.registration-head p{margin:0;color:var(--muted)}
+.form-frame{display:block;width:100%;height:2200px;border:0;background:#f4f7fb}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.85rem}
+@media(max-width:720px){header{align-items:flex-start;flex-direction:column}.features{grid-template-columns:1fr}main{padding:24px 12px 40px}.hero{border-radius:16px}.registration{margin-top:24px;border-radius:14px}.registration-head{padding:20px 17px}.form-frame{height:2600px}}
+</style>
+</head>
+<body>
 <header><div class="brand">LICM<small>MEMBERSHIP PORTAL</small></div><span>Official membership registration</span></header>
-<main><section class="hero"><div class="eyebrow">Welcome to LICM</div><h1>Become part of the LICM community.</h1><p>Use the secure registration form to submit your membership details. Your application will be recorded automatically, and you can prepare a printable provisional membership card after submitting.</p><a class="button" href="https://script.google.com/macros/s/AKfycbwoSyRsK54PzVdannu1RmX_oM-QuV0RFNof0zm42uvXMijpDfshJdTvH3jFeb3MqOvX5Q/exec" id="apply">Open Membership Form →</a><div class="note">The registration form opens in Google Apps Script. The registration form opens in the LICM Google Apps Script web app.</div></section>
-<section class="features" aria-label="Registration details"><article class="feature"><div class="num">01 / REGISTER</div><h2>Submit your details</h2><p>Complete the form with your contact details, church information, interests and face photo.</p></article><article class="feature"><div class="num">02 / PRIVATE RECORDS</div><h2>Automatic record keeping</h2><p>Applications are saved to a restricted Google Sheet. Photos are kept in private Google Drive storage.</p></article><article class="feature"><div class="num">03 / MEMBERSHIP CARD</div><h2>Print your card</h2><p>After a successful submission, prepare the 6 × 8.5 inch provisional card for printing.</p></article></section></main>
-<footer>LICM Membership Portal · Please submit accurate information. Your details should only be accessed by authorized LICM administrators.</footer></body></html>
+<main>
+<section class="hero">
+<div class="eyebrow">Welcome to LICM</div>
+<h1>Become part of the LICM community.</h1>
+<p>Complete your membership application right here on this page. Your application details are sent to LICM's private registration records, and after a successful submission you can prepare your provisional membership card for printing.</p>
+<a class="button" href="#register">Register now ↓</a>
+<div class="note">Please provide accurate information. Applications remain provisional until verified by LICM.</div>
+</section>
+<section class="features" aria-label="Registration details">
+<article class="feature"><div class="num">01 / REGISTER</div><h2>Submit your details</h2><p>Complete your contact details, church information, interests and face photo.</p></article>
+<article class="feature"><div class="num">02 / PRIVATE RECORDS</div><h2>Automatic record keeping</h2><p>Applications are saved to a restricted Google Sheet. Photos are stored in private Google Drive.</p></article>
+<article class="feature"><div class="num">03 / MEMBERSHIP CARD</div><h2>Print your card</h2><p>After successful submission, prepare the 6 × 8.5 inch provisional card for printing.</p></article>
+</section>
+<section class="registration" id="register">
+<div class="registration-head"><div class="eyebrow">Membership application</div><h2>Register with LICM</h2><p>Fill in the form below without leaving this homepage.</p></div>
+<iframe class="form-frame" title="LICM membership registration form" src="https://script.google.com/macros/s/AKfycbwoSyRsK54PzVdannu1RmX_oM-QuV0RFNof0zm42uvXMijpDfshJdTvH3jFeb3MqOvX5Q/exec" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">Your browser does not support embedded forms. Open the <a href="https://script.google.com/macros/s/AKfycbwoSyRsK54PzVdannu1RmX_oM-QuV0RFNof0zm42uvXMijpDfshJdTvH3jFeb3MqOvX5Q/exec">LICM registration form</a>.</iframe>
+</section>
+</main>
+<footer>LICM Membership Portal · Your information should only be accessed by authorized LICM administrators.</footer>
+</body>
+</html>
