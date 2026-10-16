@@ -46,7 +46,10 @@ function setup() {
 function doGet() {
   return HtmlService.createHtmlOutputFromFile('Form')
     .setTitle('LICM Membership Registration')
-    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+    // This public registration page is intentionally embedded in the LICM homepage.
+    // Do not add privileged/admin actions to this publicly frameable page.
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 function submitMembership(payload) {
@@ -74,7 +77,7 @@ function submitMembership(payload) {
   }
 
   const photoDataUrl = String(payload.photoDataUrl || '');
-  const match = photoDataUrl.match(/^data:(image\/(?:jpeg|png));base64,([A-Za-z0-9+/=]+)$/);
+  const match = photoDataUrl.match(/^data:(image\\/(?:jpeg|png));base64,([A-Za-z0-9+/=]+)$/);
   if (!match) throw new Error('Please upload a valid JPG or PNG face photo.');
   const mimeType = match[1];
   const encoded = match[2];
@@ -124,5 +127,5 @@ function requiredText(value, label, maxLength) {
 // Prevent user-provided text from being interpreted as a spreadsheet formula.
 function safeCell(value) {
   const text = String(value == null ? '' : value);
-  return /^[=+@\-]/.test(text) ? "'" + text : text;
+  return /^[=+@\\-]/.test(text) ? "'" + text : text;
 }
